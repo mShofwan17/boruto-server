@@ -18,8 +18,10 @@ application {
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
-tasks.create("stage"){
-    dependsOn("installDist")
+ktor {
+    fatJar {
+        archiveFileName.set("fat.jar")
+    }
 }
 
 repositories {
